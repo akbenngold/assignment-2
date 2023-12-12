@@ -18,8 +18,10 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-
 .header__title {
   font-family: sans-serif;
   font-size: 30px;
@@ -55,14 +57,21 @@ select {
   height: 48px;
   border: 1px solid rgba(128, 128, 128, 0.425);
   padding: 1rem;
+  border-radius: 3px;
   font-family: "Sofia Pro", sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 20px;
   letter-spacing: 0.2px;
   text-align: left;
+  outline: none;
 }
 
+input:focus,
+select:focus {
+  border: 1px solid #2ec4b6;
+  box-shadow: 0px 0.1px 1px 0px #2ec4b6;
+}
 h3 {
   font-family: "Sofia Pro";
   font-size: 14px;
@@ -85,7 +94,7 @@ button {
   font-family: "Sofia Pro";
   font-size: 16px;
   font-weight: 600;
-  text-height: 16px;
+  line-height: 16px;
   height: 48px;
   color: white;
   border: 0;
@@ -102,4 +111,25 @@ header,
 main {
   width: 87%;
   margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    padding-right: 3rem;
+  }
+  body {
+    display: flex;
+    flex-direction: row;
+    padding: 3rem;
+  }
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .form__activity,
+  .form__password,
+  .form__register {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
